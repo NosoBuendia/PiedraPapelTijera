@@ -1,0 +1,66 @@
+@Font-face {
+    font-family: titulo;
+    src: url(media/CRAZK___.TTF);
+}
+@Font-face {
+    font-family: texto;
+    src: url(media/Spicy\ Potatos.ttf);
+}
+h1 {
+    text-align: center;
+    font-size: 5em;
+    font-family: titulo;
+}
+.texto {   
+    text-align: center;
+   
+    font-size: 1.5em;
+}
+#Go {  
+    font-family: texto;    
+    cursor: pointer;   
+    font-size: 1.5em;
+    background-color: #ffffff;
+    border: 1px solid #070707;
+    border-radius: 5px;
+    padding: 10px;   
+    transition: all .1s;
+}
+#Go:active {
+    position: relative;
+    top: 2px;
+}
+#Go:hover {
+    box-shadow: #3438349f 1px 0 15px; 
+}
+
+#inputNombre {
+    font-family: texto;
+    font-size: 1.5em;
+    height: auto;
+    width: auto;
+    margin: 0;
+    outline: 0;
+    padding: 10px;  
+}
+#inputNombre:hover {
+    box-shadow: #3438349f 1px 0 15px; 
+}
+#botonera {
+    display: flex;
+    justify-content: center;    
+}
+.seleccion {   
+    border-radius:50%;
+    margin: 20px;  
+    padding: 0;    
+    overflow: hidden;
+    cursor: pointer;   
+}
+.seleccion:hover {
+    box-shadow: #3438349f 1px 0 15px;;    
+}
+.imgContenedor {    
+    max-width: 17vw;
+    border-radius:50%;  
+}
