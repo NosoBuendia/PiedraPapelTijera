@@ -14,12 +14,24 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+.cambioModo {
+    position:fixed;
+    top: 5px;
+    right: 5px;
+}
 h1 {
     text-align: center;
     font-size: 3em;
     font-family: titulo;
 }
-.texto {   
+.nombreUsuario {
+    margin-bottom: 30px;    
+    text-align: center;
+    font-family: texto;
+    font-size: 1.2em;
+}
+.texto {
+    margin: 10px;
     text-align: center;
     font-family: texto;
     font-size: 1.5em;
@@ -33,8 +45,9 @@ h1 {
     color: red;
     font-size: 3em;
     padding: 100px;
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;    
 }
-.juego, .inicio {
+.inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,8 +89,21 @@ h1 {
 .mensajeBienvenida {
     display: none;
     flex-direction: column;
+    animation: 3s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;    
 }
 .resultadoFinal {
     display: none;
     flex-direction: column;
 }
+
+
+
+@keyframes wipe-in-down {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  
