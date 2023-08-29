@@ -7,7 +7,7 @@ let puntosUsuario = 0;
 //Variable donde se lleva el conteo de puntos de la Computadora
 let puntosComputadora = 0; 
 
-//Paso a variable todos los elementos con el metodo querySelectorpara que al necesitar usarlos, sea mas facil llamarlos.
+//Paso a variable todos los elementos con el metodo querySelector para que al necesitar usarlos, sea mas facil llamarlos.
 const nombreUsuario = document.querySelector("#nombreUsuario");
 
 const inicio = document.querySelector(".inicio");
@@ -16,12 +16,12 @@ const mensajeBienvenida = document.querySelector(".mensajeBienvenida");
 
 const personalizado = document.querySelector("#personalizado");
 
+const nuevoJuego = document.querySelector("#nuevoJuego");
 
 const botonera = document.querySelector(".botonera");
 
 const piedra = document.getElementById("piedra");
 piedra.addEventListener("click", () => enJuego("piedra"));
-
 
 const papel = document.getElementById("papel");
 papel.addEventListener("click", () => enJuego("papel"));
@@ -48,7 +48,7 @@ const ganadorFinal = document.querySelector("#ganadorFinal");
 
 //Funcion para conseguir nombre del jugador
 function traerNombre(id) {
-
+    
     if ((document.querySelector(id).value) === ``) {
         alert("ERROR: Tenes que ingresar tu nombre");
         return;
@@ -57,7 +57,7 @@ function traerNombre(id) {
         let nombre = document.querySelector(id).value
         return nombre;
     }
-
+    
 }
 
 //Funcion, con un randomizador, para obtener la jugada de la Computadora
@@ -86,6 +86,7 @@ function determinarGanador(jugada1, jugada2) {
 function jugarTurno(eleccionUsuario) {
 
     mensajeBienvenida.style.display = "none";
+    nuevoJuego.style.display = "none";
 
     jugadaUsuario.innerText = `${usuario} eligio: ${eleccionUsuario}`;
 
@@ -111,7 +112,7 @@ function jugarTurno(eleccionUsuario) {
 
 }
 
-//Funcion que pone a correr el juego llamando hasta que alguien gane (accionada por los botones de P/P/T)
+//Funcion que pone a correr el  cada turno del juego hasta que alguien gane (accionada por los botones de P/P/T)
 function enJuego(jugadaElegida) {
 
     if (puntosUsuario < 5 && puntosComputadora < 5) {
@@ -134,8 +135,22 @@ function enJuego(jugadaElegida) {
         }
     }
 }
+//Funcion que restablece los valores a 0 para jugar de nuevo 8conservando el nombre
+function resetear(){
+    puntosUsuario = 0;
+    puntosComputadora = 0;
+    jugadaUsuario.innerText = ``;
+    jugadaComputadora.innerText = ``;
+    ganador.innerText = ``;
+    contadorUsuario.innerText = ``;
+    contadorComputadora.innerText = ``;
+    resultadoFinal.style.display = "none";
+    nuevoJuego.style.display = "block";
+    botonera.style.display = "block";
+    info.style.display = "block";
+};
 
-//Al accionar el boton inicial, se determina el nombre de usuario, el boton se esconde y se muestra la botonera.
+//Al accionar el boton inicial, se determina el nombre de usuario, el boton se esconde y se muestra  el mensaje de bienvenida y la botonera.
 go.addEventListener("click", () => {
     usuario = traerNombre("#nombreUsuario");  
     if(usuario !== undefined){
@@ -144,4 +159,8 @@ go.addEventListener("click", () => {
         botonera.style.display = "block";
         inicio.style.display = "none"; 
     }    
+});
+//Al accionar el boton se comienza una nueva partida de 0
+reset.addEventListener("click", () => {
+    resetear();
 });

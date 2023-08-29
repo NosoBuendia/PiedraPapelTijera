@@ -2,11 +2,13 @@
     font-family: titulo;
     src: url(media/CRAZK___.TTF);
 }
+
 @Font-face {
     font-family: texto;
     src: url(media/Spicy\ Potatos.ttf);
 }
-body {      
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,96 +16,112 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-.cambioModo {
-    position:fixed;
-    top: 5px;
-    right: 5px;
-}
+
 h1 {
     text-align: center;
     font-size: 3em;
     font-family: titulo;
 }
+
 .nombreUsuario {
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
     text-align: center;
     font-family: texto;
     font-size: 1.2em;
 }
+
 .texto {
     margin: 10px;
     text-align: center;
     font-family: texto;
     font-size: 1.5em;
 }
-#ganador {    
+
+#ganador {
     color: red;
     font-size: 2.5em;
 }
+
 #ganadorFinal {
     font-family: titulo;
     color: red;
     font-size: 3em;
     padding: 100px;
-    animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;    
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
 }
+
+#nuevoJuego {
+    display: none;
+}
+
 .inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
+
 .botonera {
     display: none;
     justify-content: center;
     padding: 10px;
 }
-#go, #reset {  
-    font-family: texto;    
-    cursor: pointer;   
+
+#go,
+#reset {
+    font-family: texto;
+    cursor: pointer;
     font-size: 1.5em;
     background-color: #ffffff;
     border: 1px solid #070707;
     border-radius: 5px;
-    padding: 10px;   
+    padding: 10px;
     transition: all .1s;
 }
-#go:active, #reset:active, .seleccion:active {
+
+#go:active,
+#reset:active,
+.seleccion:active {
     position: relative;
     top: 7px;
 }
-#go:hover, #reset:hover, .seleccion:hover {
-    box-shadow: #3438349f 2px 0 20px; 
+
+#go:hover,
+#reset:hover,
+.seleccion:hover {
+    box-shadow: #3438349f 2px 0 20px;
 }
-.seleccion {   
-    border-radius:50%;
-    margin: 20px;  
-    padding: 0;    
+
+.seleccion {
+    border-radius: 50%;
+    margin: 20px;
+    padding: 0;
     overflow: hidden;
-    cursor: pointer;   
+    cursor: pointer;
 }
-.imgContenedor {    
+
+.imgContenedor {
     max-width: 17vw;
-    border-radius:50%;  
+    border-radius: 50%;
 }
+
 .mensajeBienvenida {
     display: none;
     flex-direction: column;
-    animation: 3s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;    
+    animation: 3s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
 }
+
 .resultadoFinal {
     display: none;
     flex-direction: column;
 }
 
-
-
 @keyframes wipe-in-down {
     from {
-      clip-path: inset(0 0 100% 0);
+        clip-path: inset(0 0 100% 0);
     }
+
     to {
-      clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0 0 0);
     }
-  }
-  
+}
