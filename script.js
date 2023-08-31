@@ -63,7 +63,7 @@ function traerNombre(id) {
 //Funcion, con un randomizador, para obtener la jugada de la Computadora
 function obtenerJugadaComputadora() {
     let opciones = ["piedra", "papel", "tijera"];
-    let jugada = opciones[(Math.floor(Math.random() * 3))];
+    let jugada = opciones[(Math.floor(Math.random() * 3))]; 
     return jugada;
 }
 
@@ -115,11 +115,10 @@ function jugarTurno(eleccionUsuario) {
 //Funcion que pone a correr el  cada turno del juego hasta que alguien gane (accionada por los botones de P/P/T)
 function enJuego(jugadaElegida) {
 
-    if (puntosUsuario < 5 && puntosComputadora < 5) {
+    if (puntosUsuario + puntosComputadora < 5) {
         jugarTurno(jugadaElegida);
     }
-    if (puntosUsuario === 5 ||
-        puntosComputadora === 5 ||
+    if (puntosUsuario + puntosComputadora === 5 ||
         (Math.abs(puntosUsuario - puntosComputadora)) === 3) {
 
         botonera.style.display = "none";
@@ -135,7 +134,7 @@ function enJuego(jugadaElegida) {
         }
     }
 }
-//Funcion que restablece los valores a 0 para jugar de nuevo 8conservando el nombre
+//Funcion que restablece los valores a 0 para jugar de nuevo (conservando el nombre)
 function resetear(){
     puntosUsuario = 0;
     puntosComputadora = 0;
